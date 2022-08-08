@@ -1,0 +1,8 @@
+- It forms the core of SparkSQL.
+- Transforms the query to physical plan of execution. Similar to DAG scheduler used to create physical plan of execution of RDD.
+
+- Steps:
+  - Logical Plan
+  - Physical Plan
+  - Optimized Plan
+  - Cost Model: Decides which plan is taking the least processing time and least costly, it'll choose that as the most optimized plan.
