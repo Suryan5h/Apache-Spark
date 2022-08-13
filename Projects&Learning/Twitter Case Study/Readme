@@ -1,3 +1,11 @@
 Twitter Real time data Analysis using Apache Spark!
 
 1. Started
+You create a socket, s to connect to the Spark Streaming job.
+The socket is waiting to accept a connection from the Spark Streaming job.
+When the connection is established, the variable c, (which has the destination port, that is the port of the Spark Streaming job) is passed on to send_twitter_data(c).
+This, in turn, triggers the class TwitterListener(), which is of the type StreamListener.
+Inside TwitterListener(), you do the following:
+Assign c to the client_socket.
+Send the tweet_text received within the tweepy stream, twitter_stream_data to the client_socket, which is c.
+Finally, you filter the stream, twitter_stream_data on the word 'corona'.
