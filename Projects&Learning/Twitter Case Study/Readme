@@ -1,7 +1,7 @@
 Twitter Real time data Analysis using Apache Spark!
 
 1. Started
-You create a socket, s to connect to the Spark Streaming job.
+2. You create a socket, s to connect to the Spark Streaming job.
 The socket is waiting to accept a connection from the Spark Streaming job.
 When the connection is established, the variable c, (which has the destination port, that is the port of the Spark Streaming job) is passed on to send_twitter_data(c).
 This, in turn, triggers the class TwitterListener(), which is of the type StreamListener.
@@ -9,3 +9,14 @@ Inside TwitterListener(), you do the following:
 Assign c to the client_socket.
 Send the tweet_text received within the tweepy stream, twitter_stream_data to the client_socket, which is c.
 Finally, you filter the stream, twitter_stream_data on the word 'corona'.
+
+3. Some of the libraries that are useful in getting real-time tweets from Twitter API are as follows:
+
+Tweepy: This library is used to access the Twitter API. You can use this library to get tweets from timelines, post or delete tweets, or follow or unfollow
+users on Twitter. 
+OAuthHandler: Before getting data from Twitter APIs, we need to register our client application with Twitter, using this library. 
+Stream: This library is used to get a stream of data from the Twitter API.
+StreamListener: This library is used to listen to tweets that are being posted on a real-time basis and perform operations on the same.
+Import JSON: As all the tweets received are in the JSON format. Hence, to read those JSON format tweets, you need to import his library.
+Import socket: Socket will help in creating a connection that will be used to read all the data from Twitter API and also sending them to another address
+on the local machine for the Spark Streaming job.
